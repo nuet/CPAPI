@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fresh</name>
+    </assembly>
+    <members>
+        <member name="T:FreshLibrary.FileTimestamp">
+            <summary>
+            File available timestamps.
+            </summary>
+        </member>
+        <member name="F:FreshLibrary.FileTimestamp.Creation">
+            <summary>
+            Date of file's creation.
+            </summary>
+        </member>
+        <member name="F:FreshLibrary.FileTimestamp.LastAccess">
+            <summary>
+            Date of file's last access.
+            </summary>
+        </member>
+        <member name="F:FreshLibrary.FileTimestamp.LastWrite">
+            <summary>
+            Date of file's last write.
+            </summary>
+        </member>
+        <member name="T:FreshLibrary.FreshFolder">
+            <summary>
+            Periodically cleans up a folder.
+            </summary>
+        </member>
+        <member name="F:FreshLibrary.FreshFolder.Path">
+            <summary>
+            Path of the folder to periodically cleanup.
+            </summary>
+        </member>
+        <member name="F:FreshLibrary.FreshFolder.Threshold">
+            <summary>
+            The minimum lifetime of the file to be deleted.
+            </summary>
+        </member>
+        <member name="F:FreshLibrary.FreshFolder.Interval">
+            <summary>
+            How often the cleanup occurs.
+            </summary>
+        </member>
+        <member name="F:FreshLibrary.FreshFolder.TimestampToCheck">
+            <summary>
+            Timestamp used to determine if the file must be deleted.
+            </summary>
+        </member>
+        <member name="M:FreshLibrary.FreshFolder.#ctor(System.String,System.TimeSpan,System.TimeSpan,FreshLibrary.FileTimestamp)">
+            <summary>
+            Constructs and starts the cleaner.
+            </summary>
+            <param name="path">Path of the folder to periodically cleanup</param>
+            <param name="threshold">The minimum lifetime of the file to be deleted</param>
+            <param name="interval">How often the cleanup occurs</param>
+            <param name="timestampToCheck">Timestamp to use to determine if the file must be deleted</param>
+        </member>
+        <member name="M:FreshLibrary.FreshFolder.Dispose">
+            <summary>
+            Disposes this folder cleaner and it's underlying timer.
+            </summary>
+        </member>
+    </members>
+</doc>

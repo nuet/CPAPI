@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>L</name>
+    </assembly>
+    <members>
+        <member name="T:LLibrary.L">
+            <summary>
+            Formats and logs the given information.
+            Use Log.Register() to register a new format and Log.This() to log something.
+            </summary>
+        </member>
+        <member name="F:LLibrary.L.Directory">
+            <summary>
+            Path of the directory of the log files.
+            </summary>
+        </member>
+        <member name="M:LLibrary.L.CleanItself">
+            <summary>
+            Sets the logger to clean itself (files older than 10 days).
+            </summary>
+        </member>
+        <member name="M:LLibrary.L.Log(System.String,System.Object[])">
+            <summary>
+            Formats the given information and logs it.
+            If the format doesn't exists it does nothing.
+            </summary>
+            <param name="name">Name of the registered format to use</param>
+            <param name="args">Arguments used when formating</param>
+            <returns>True if the format exists and the logging was made, false otherwise.</returns>
+        </member>
+        <member name="M:LLibrary.L.Register(System.String)">
+            <summary>
+            Register a new log format.
+            The given format is used with string.Format, for further format info refer to it's documentation.
+            </summary>
+            <param name="name">Format's name</param>
+        </member>
+        <member name="M:LLibrary.L.Register(System.String,System.String)">
+            <summary>
+            Register a new log format.
+            The given format is used with string.Format, for further format info refer to it's documentation.
+            </summary>
+            <param name="name">Format's name</param>
+            <param name="format">The format (optional)</param>
+        </member>
+        <member name="M:LLibrary.L.Unregister(System.String)">
+            <summary>
+            Unregisters the given format.
+            </summary>
+            <param name="name">Format's name</param>
+            <returns>True if the format was found and unregistered, false otherwise.</returns>
+        </member>
+        <member name="M:LLibrary.L.UnregisterAll">
+            <summary>
+            Unregister all formats.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,17 @@
+D:\MichauxPro\ZPY\ProTools\bin\Release\ProTools.dll
+D:\MichauxPro\ZPY\ProTools\bin\Release\ProTools.pdb
+D:\MichauxPro\ZPY\ProTools\obj\Release\ProTools.dll
+D:\MichauxPro\ZPY\ProTools\obj\Release\ProTools.pdb
+D:\MichauxPro\ZPY\ProTools\obj\Release\ProTools.csprojResolveAssemblyReference.cache
+D:\MichauxPro\CPiao\ProTools\bin\Release\ProTools.dll
+D:\MichauxPro\CPiao\ProTools\bin\Release\ProTools.pdb
+D:\MichauxPro\CPiao\ProTools\bin\Release\Fresh.dll
+D:\MichauxPro\CPiao\ProTools\bin\Release\L.dll
+D:\MichauxPro\CPiao\ProTools\bin\Release\Newtonsoft.Json.dll
+D:\MichauxPro\CPiao\ProTools\bin\Release\Fresh.pdb
+D:\MichauxPro\CPiao\ProTools\bin\Release\Fresh.xml
+D:\MichauxPro\CPiao\ProTools\bin\Release\L.pdb
+D:\MichauxPro\CPiao\ProTools\bin\Release\L.xml
+D:\MichauxPro\CPiao\ProTools\obj\Release\ProTools.csprojResolveAssemblyReference.cache
+D:\MichauxPro\CPiao\ProTools\obj\Release\ProTools.dll
+D:\MichauxPro\CPiao\ProTools\obj\Release\ProTools.pdb

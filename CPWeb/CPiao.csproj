@@ -1,0 +1,1105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB3C794B-5A6A-494B-8E2B-A0662ACC3084}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CPiao</RootNamespace>
+    <AssemblyName>CPiao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentScheduler, Version=5.1.0.0, Culture=neutral, PublicKeyToken=b76503528a14ebd1, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentScheduler.5.1.0\lib\net40\FluentScheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fresh, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fresh.2.0.0\lib\Fresh.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="L, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\L.3.0.0\lib\L.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LogClass">
+      <HintPath>DLL\LogClass.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ExpandClass.cs" />
+    <Compile Include="Common\UserAuthorize.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LotteryController.cs" />
+    <Compile Include="Controllers\PlugController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SysSetController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="TaskRun\DisposableJob.cs" />
+    <Compile Include="TaskRun\LogHelper.cs" />
+    <Compile Include="TaskRun\ParameterJob.cs" />
+    <Compile Include="TaskRun\TaskBase.cs" />
+    <Content Include="modules\css\account.css" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\Config.cs" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\Handler.cs" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\PathFormater.cs" />
+    <Compile Include="modules\plug\umeditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="modules\plug\umeditor\net\Uploader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="modules\assets\jquery.pwstabs-1.1.3.js" />
+    <Content Include="modules\assets\jquery.pwstabs-1.1.3.min.js" />
+    <Content Include="modules\assets\jquery.pwstabs.css" />
+    <Content Include="modules\assets\jquery.pwstabs.min.css" />
+    <Content Include="modules\assets\styles.css" />
+    <Content Include="modules\css\active.css" />
+    <Content Include="modules\css\base.css" />
+    <Content Include="modules\css\chongqingssc.css" />
+    <Content Include="modules\css\diyUpload.css" />
+    <Content Include="modules\css\head.css" />
+    <Content Include="modules\css\help.css" />
+    <Content Include="modules\css\iconfont\demo.css" />
+    <Content Include="modules\css\iconfont\demo.html" />
+    <Content Include="modules\css\iconfont\iconfont.css" />
+    <Content Include="modules\css\iconfont\iconfont.svg" />
+    <Content Include="modules\css\keyboard-dark.min.css" />
+    <Content Include="modules\css\keyboard.min.css" />
+    <Content Include="modules\css\keycommon.css" />
+    <Content Include="modules\css\layout.css" />
+    <Content Include="modules\css\message.css" />
+    <Content Include="modules\css\need\laydate.css" />
+    <Content Include="modules\css\shanghaissl.css" />
+    <Content Include="modules\css\shiyiyun.css" />
+    <Content Include="modules\css\skins\dahong\icon.png" />
+    <Content Include="modules\css\skins\dahong\laydate.css" />
+    <Content Include="modules\css\skins\danlan\icon.png" />
+    <Content Include="modules\css\skins\danlan\laydate.css" />
+    <Content Include="modules\css\skins\default\icon.png" />
+    <Content Include="modules\css\skins\default\laydate.css" />
+    <Content Include="modules\css\skins\molv\icon.png" />
+    <Content Include="modules\css\skins\molv\laydate.css" />
+    <Content Include="modules\css\skins\qianhuang\icon.png" />
+    <Content Include="modules\css\skins\qianhuang\laydate.css" />
+    <Content Include="modules\css\skins\yahui\icon.png" />
+    <Content Include="modules\css\skins\yahui\laydate.css" />
+    <Content Include="modules\css\skins\yalan\icon.png" />
+    <Content Include="modules\css\skins\yalan\laydate.css" />
+    <Content Include="modules\css\slide.css" />
+    <Content Include="modules\css\system\role.css" />
+    <Content Include="modules\css\system\system.css" />
+    <Content Include="modules\css\tianjinssc.css" />
+    <Content Include="modules\css\usershared.css" />
+    <Content Include="modules\css\webuploader.css" />
+    <Content Include="modules\datapager\images\next.png" />
+    <Content Include="modules\datapager\images\previous.png" />
+    <Content Include="modules\datapager\images\snext.png" />
+    <Content Include="modules\datapager\images\sprevious.png" />
+    <Content Include="modules\datapager\style.css" />
+    <Content Include="modules\images\11.png" />
+    <Content Include="modules\images\22.png" />
+    <Content Include="modules\images\ball1.png" />
+    <Content Include="modules\images\ball2.png" />
+    <Content Include="modules\images\ball3.png" />
+    <Content Include="modules\images\ball4.png" />
+    <Content Include="modules\images\ball5.png" />
+    <Content Include="modules\images\ballbg.png" />
+    <Content Include="modules\images\bg1.png" />
+    <Content Include="modules\images\close.png" />
+    <Content Include="modules\images\default.png" />
+    <Content Include="modules\images\footer_bg.gif" />
+    <Content Include="modules\images\ico-btnadd.png" />
+    <Content Include="modules\images\ico-check.png" />
+    <Content Include="modules\images\ico-checked.png" />
+    <Content Include="modules\images\ico-checknotall.png" />
+    <Content Include="modules\images\ico-dropdown-white.png" />
+    <Content Include="modules\images\ico-dropdown.png" />
+    <Content Include="modules\images\ico-loading.gif" />
+    <Content Include="modules\images\ico-tree-full.png" />
+    <Content Include="modules\images\ico-tree-last.png" />
+    <Content Include="modules\images\ico-tree-line.png" />
+    <Content Include="modules\images\ico-tree-open.png" />
+    <Content Include="modules\images\ico-tree-pull.png" />
+    <Content Include="modules\images\icondate.png" />
+    <Content Include="modules\images\ico_search.png" />
+    <Content Include="modules\images\ico_searchhover.png" />
+    <Content Include="modules\images\img-noimg.png" />
+    <Content Include="modules\images\minus.png" />
+    <Content Include="modules\images\order.png" />
+    <Content Include="modules\images\plus.png" />
+    <Content Include="modules\images\time.png" />
+    <Content Include="modules\images\tips.png" />
+    <Content Include="modules\images\tips2.png" />
+    <Content Include="modules\img\bg.jpg" />
+    <Content Include="modules\img\browser.png" />
+    <Content Include="modules\img\down-arrow.png" />
+    <Content Include="modules\img\head.jpg" />
+    <Content Include="modules\img\header-bg.png" />
+    <Content Include="modules\img\litte-icon\1.png" />
+    <Content Include="modules\img\litte-icon\11.png" />
+    <Content Include="modules\img\litte-icon\account-safe.png" />
+    <Content Include="modules\img\litte-icon\coupon.png" />
+    <Content Include="modules\img\litte-icon\getjf01.jpg" />
+    <Content Include="modules\img\litte-icon\getjf02.jpg" />
+    <Content Include="modules\img\litte-icon\jfen.png" />
+    <Content Include="modules\img\litte-icon\logo.png" />
+    <Content Include="modules\img\litte-icon\record.png" />
+    <Content Include="modules\img\litte-icon\三角 %282%29.png" />
+    <Content Include="modules\img\litte-icon\三角.png" />
+    <Content Include="modules\img\litte-icon\优惠券.png" />
+    <Content Include="modules\img\litte-icon\关闭差.png" />
+    <Content Include="modules\img\litte-icon\对号.png" />
+    <Content Include="modules\img\litte-icon\尖括号-粗大-右.png" />
+    <Content Include="modules\img\litte-icon\手机.png" />
+    <Content Include="modules\img\litte-icon\时钟.png" />
+    <Content Include="modules\img\litte-icon\游戏.png" />
+    <Content Include="modules\img\litte-icon\游戏1.png" />
+    <Content Include="modules\img\litte-icon\积分.png" />
+    <Content Include="modules\img\litte-icon\记录.png" />
+    <Content Include="modules\img\litte-icon\账户安全a.png" />
+    <Content Include="modules\img\litte-icon\资金安全a.png" />
+    <Content Include="modules\img\litte-icon\邮箱.png" />
+    <Content Include="modules\img\litte-icon\锁.png" />
+    <Content Include="modules\img\messagecenter.png" />
+    <Content Include="modules\img\yinhang\gh.jpg" />
+    <Content Include="modules\img\yinhang\gongh.jpg" />
+    <Content Include="modules\img\yinhang\img.png" />
+    <Content Include="modules\img\yinhang\jianh.jpg" />
+    <Content Include="modules\img\yinhang\nongh.jpg" />
+    <Content Include="modules\img\yinhang\wangyin.jpg" />
+    <Content Include="modules\jedate\jedate.js" />
+    <Content Include="modules\jedate\jedate.min.js" />
+    <Content Include="modules\jedate\skin\jedate.css" />
+    <Content Include="modules\datapager\paginate.js" />
+    <Content Include="modules\plug\city.js" />
+    <Content Include="modules\plug\datapager\images\next.png" />
+    <Content Include="modules\plug\datapager\images\previous.png" />
+    <Content Include="modules\plug\datapager\images\snext.png" />
+    <Content Include="modules\plug\datapager\images\sprevious.png" />
+    <Content Include="modules\plug\datapager\paginate.js" />
+    <Content Include="modules\plug\datapager\style.css" />
+    <Content Include="modules\plug\daterangepicker\daterangepicker.css" />
+    <Content Include="modules\plug\daterangepicker\daterangepicker.js" />
+    <Content Include="modules\plug\daterangepicker\moment.js" />
+    <Content Include="modules\plug\doT.js" />
+    <Content Include="modules\plug\dropdown\dropdown.js" />
+    <Content Include="modules\plug\dropdown\style.css" />
+    <Content Include="modules\plug\easydialog\easydialog.css" />
+    <Content Include="modules\plug\easydialog\easydialog.js" />
+    <Content Include="modules\plug\easydialog\ico-close-hover.png" />
+    <Content Include="modules\plug\easydialog\ico-close.png" />
+    <Content Include="modules\plug\echarts\chart.js" />
+    <Content Include="modules\plug\echarts\chart\bar.js" />
+    <Content Include="modules\plug\echarts\chart\base.js" />
+    <Content Include="modules\plug\echarts\chart\chord.js" />
+    <Content Include="modules\plug\echarts\chart\eventRiver.js" />
+    <Content Include="modules\plug\echarts\chart\force.js" />
+    <Content Include="modules\plug\echarts\chart\funnel.js" />
+    <Content Include="modules\plug\echarts\chart\gauge.js" />
+    <Content Include="modules\plug\echarts\chart\island.js" />
+    <Content Include="modules\plug\echarts\chart\k.js" />
+    <Content Include="modules\plug\echarts\chart\line.js" />
+    <Content Include="modules\plug\echarts\chart\map.js" />
+    <Content Include="modules\plug\echarts\chart\pie.js" />
+    <Content Include="modules\plug\echarts\chart\radar.js" />
+    <Content Include="modules\plug\echarts\chart\scatter.js" />
+    <Content Include="modules\plug\echarts\chart\tree.js" />
+    <Content Include="modules\plug\echarts\chart\treemap.js" />
+    <Content Include="modules\plug\echarts\chart\venn.js" />
+    <Content Include="modules\plug\echarts\chart\wordCloud.js" />
+    <Content Include="modules\plug\echarts\component.js" />
+    <Content Include="modules\plug\echarts\component\axis.js" />
+    <Content Include="modules\plug\echarts\component\base.js" />
+    <Content Include="modules\plug\echarts\component\categoryAxis.js" />
+    <Content Include="modules\plug\echarts\component\dataRange.js" />
+    <Content Include="modules\plug\echarts\component\dataView.js" />
+    <Content Include="modules\plug\echarts\component\dataZoom.js" />
+    <Content Include="modules\plug\echarts\component\grid.js" />
+    <Content Include="modules\plug\echarts\component\legend.js" />
+    <Content Include="modules\plug\echarts\component\polar.js" />
+    <Content Include="modules\plug\echarts\component\roamController.js" />
+    <Content Include="modules\plug\echarts\component\timeline.js" />
+    <Content Include="modules\plug\echarts\component\title.js" />
+    <Content Include="modules\plug\echarts\component\toolbox.js" />
+    <Content Include="modules\plug\echarts\component\tooltip.js" />
+    <Content Include="modules\plug\echarts\component\valueAxis.js" />
+    <Content Include="modules\plug\echarts\config.js" />
+    <Content Include="modules\plug\echarts\data\Graph.js" />
+    <Content Include="modules\plug\echarts\data\KDTree.js" />
+    <Content Include="modules\plug\echarts\data\quickSelect.js" />
+    <Content Include="modules\plug\echarts\data\Tree.js" />
+    <Content Include="modules\plug\echarts\echarts.js" />
+    <Content Include="modules\plug\echarts\layout\Chord.js" />
+    <Content Include="modules\plug\echarts\layout\EdgeBundling.js" />
+    <Content Include="modules\plug\echarts\layout\eventRiver.js" />
+    <Content Include="modules\plug\echarts\layout\Force.js" />
+    <Content Include="modules\plug\echarts\layout\forceLayoutWorker.js" />
+    <Content Include="modules\plug\echarts\layout\Tree.js" />
+    <Content Include="modules\plug\echarts\layout\TreeMap.js" />
+    <Content Include="modules\plug\echarts\layout\WordCloud.js" />
+    <Content Include="modules\plug\echarts\layout\WordCloudRectZero.js" />
+    <Content Include="modules\plug\echarts\theme\default.js" />
+    <Content Include="modules\plug\echarts\theme\infographic.js" />
+    <Content Include="modules\plug\echarts\theme\macarons.js" />
+    <Content Include="modules\plug\echarts\util\accMath.js" />
+    <Content Include="modules\plug\echarts\util\coordinates.js" />
+    <Content Include="modules\plug\echarts\util\date.js" />
+    <Content Include="modules\plug\echarts\util\ecAnimation.js" />
+    <Content Include="modules\plug\echarts\util\ecData.js" />
+    <Content Include="modules\plug\echarts\util\ecEffect.js" />
+    <Content Include="modules\plug\echarts\util\ecQuery.js" />
+    <Content Include="modules\plug\echarts\util\kwargs.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoCoord.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\an_hui_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\ao_men_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\bei_jing_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\china_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\chong_qing_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\fu_jian_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\gan_su_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\guang_dong_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\guang_xi_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\gui_zhou_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\hai_nan_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\hei_long_jiang_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\he_bei_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\he_nan_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\hu_bei_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\hu_nan_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\jiang_su_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\jiang_xi_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\ji_lin_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\liao_ning_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\nei_meng_gu_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\ning_xia_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\qing_hai_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\shang_hai_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\shan_dong_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\shan_xi_1_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\shan_xi_2_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\si_chuan_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\tai_wan_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\tian_jin_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\world_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\xiang_gang_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\xin_jiang_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\xi_zang_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\yun_nan_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\geoJson\zhe_jiang_geo.js" />
+    <Content Include="modules\plug\echarts\util\mapData\params.js" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\encode.js" />
+    <Content Include="modules\plug\echarts\util\mapData\textFixed.js" />
+    <Content Include="modules\plug\echarts\util\ndarray.js" />
+    <Content Include="modules\plug\echarts\util\number.js" />
+    <Content Include="modules\plug\echarts\util\projection\albers.js" />
+    <Content Include="modules\plug\echarts\util\projection\mercator.js" />
+    <Content Include="modules\plug\echarts\util\projection\normal.js" />
+    <Content Include="modules\plug\echarts\util\projection\svg.js" />
+    <Content Include="modules\plug\echarts\util\shape\Candle.js" />
+    <Content Include="modules\plug\echarts\util\shape\Chain.js" />
+    <Content Include="modules\plug\echarts\util\shape\Cross.js" />
+    <Content Include="modules\plug\echarts\util\shape\GaugePointer.js" />
+    <Content Include="modules\plug\echarts\util\shape\HalfSmoothPolygon.js" />
+    <Content Include="modules\plug\echarts\util\shape\HandlePolygon.js" />
+    <Content Include="modules\plug\echarts\util\shape\Icon.js" />
+    <Content Include="modules\plug\echarts\util\shape\MarkLine.js" />
+    <Content Include="modules\plug\echarts\util\shape\normalIsCover.js" />
+    <Content Include="modules\plug\echarts\util\shape\Ribbon.js" />
+    <Content Include="modules\plug\echarts\util\shape\Symbol.js" />
+    <Content Include="modules\plug\echarts\util\smartLogSteps.js" />
+    <Content Include="modules\plug\echarts\util\smartSteps.js" />
+    <Content Include="modules\plug\echarts\zrender\animation\Animation.js" />
+    <Content Include="modules\plug\echarts\zrender\animation\Clip.js" />
+    <Content Include="modules\plug\echarts\zrender\animation\easing.js" />
+    <Content Include="modules\plug\echarts\zrender\config.js" />
+    <Content Include="modules\plug\echarts\zrender\dep\excanvas.js" />
+    <Content Include="modules\plug\echarts\zrender\dep\excanvas2.js" />
+    <Content Include="modules\plug\echarts\zrender\dep\excanvas3.js" />
+    <Content Include="modules\plug\echarts\zrender\Group.js" />
+    <Content Include="modules\plug\echarts\zrender\Handler.js" />
+    <Content Include="modules\plug\echarts\zrender\Layer.js" />
+    <Content Include="modules\plug\echarts\zrender\loadingEffect\Bar.js" />
+    <Content Include="modules\plug\echarts\zrender\loadingEffect\Base.js" />
+    <Content Include="modules\plug\echarts\zrender\loadingEffect\Bubble.js" />
+    <Content Include="modules\plug\echarts\zrender\loadingEffect\DynamicLine.js" />
+    <Content Include="modules\plug\echarts\zrender\loadingEffect\Ring.js" />
+    <Content Include="modules\plug\echarts\zrender\loadingEffect\Spin.js" />
+    <Content Include="modules\plug\echarts\zrender\loadingEffect\Whirling.js" />
+    <Content Include="modules\plug\echarts\zrender\macro.js" />
+    <Content Include="modules\plug\echarts\zrender\mixin\Eventful.js" />
+    <Content Include="modules\plug\echarts\zrender\mixin\Transformable.js" />
+    <Content Include="modules\plug\echarts\zrender\Painter.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Base.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\BezierCurve.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Circle.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Droplet.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Ellipse.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Heart.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Image.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Isogon.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Line.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Path.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Polygon.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Polyline.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Rectangle.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Ring.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Rose.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Sector.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\ShapeBundle.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Star.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Text.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\Trochoid.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\util\dashedLineTo.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\util\PathProxy.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\util\smoothBezier.js" />
+    <Content Include="modules\plug\echarts\zrender\shape\util\smoothSpline.js" />
+    <Content Include="modules\plug\echarts\zrender\Storage.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\area.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\color.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\computeBoundingBox.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\curve.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\env.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\event.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\guid.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\http.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\log.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\math.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\matrix.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\util.js" />
+    <Content Include="modules\plug\echarts\zrender\tool\vector.js" />
+    <Content Include="modules\plug\echarts\zrender\zrender.js" />
+    <Content Include="modules\plug\laydate\demo.html" />
+    <Content Include="modules\plug\laydate\laydate.js" />
+    <Content Include="modules\plug\laydate\need\laydate.css" />
+    <Content Include="modules\plug\laydate\skins\dahong\icon.png" />
+    <Content Include="modules\plug\laydate\skins\dahong\laydate.css" />
+    <Content Include="modules\plug\laydate\skins\default\icon.png" />
+    <Content Include="modules\plug\laydate\skins\default\laydate.css" />
+    <Content Include="modules\plug\laydate\skins\molv\icon.png" />
+    <Content Include="modules\plug\laydate\skins\molv\laydate.css" />
+    <Content Include="modules\plug\seach_keys\seach_keys.js" />
+    <Content Include="modules\plug\seach_keys\style.css" />
+    <Content Include="modules\plug\switch\style.css" />
+    <Content Include="modules\plug\switch\switch.js" />
+    <Content Include="modules\plug\umeditor\dialogs\anchor\anchor.html" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.css" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.html" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.js" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\bg.png" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\icons.png" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\image.png" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\progress.png" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\success.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\attachment\images\success.png" />
+    <Content Include="modules\plug\umeditor\dialogs\background\background.css" />
+    <Content Include="modules\plug\umeditor\dialogs\background\background.html" />
+    <Content Include="modules\plug\umeditor\dialogs\background\background.js" />
+    <Content Include="modules\plug\umeditor\dialogs\background\images\bg.png" />
+    <Content Include="modules\plug\umeditor\dialogs\background\images\success.png" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\chart.config.js" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\charts.css" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\charts.html" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\charts.js" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\images\charts0.png" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\images\charts1.png" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\images\charts2.png" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\images\charts3.png" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\images\charts4.png" />
+    <Content Include="modules\plug\umeditor\dialogs\charts\images\charts5.png" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\emotion.css" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\emotion.html" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\emotion.js" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\0.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\formula\formula.css" />
+    <Content Include="modules\plug\umeditor\dialogs\formula\formula.html" />
+    <Content Include="modules\plug\umeditor\dialogs\formula\formula.js" />
+    <Content Include="modules\plug\umeditor\dialogs\formula\images\formula.png" />
+    <Content Include="modules\plug\umeditor\dialogs\gmap\gmap.html" />
+    <Content Include="modules\plug\umeditor\dialogs\help\help.css" />
+    <Content Include="modules\plug\umeditor\dialogs\help\help.html" />
+    <Content Include="modules\plug\umeditor\dialogs\help\help.js" />
+    <Content Include="modules\plug\umeditor\dialogs\image\image.css" />
+    <Content Include="modules\plug\umeditor\dialogs\image\image.html" />
+    <Content Include="modules\plug\umeditor\dialogs\image\image.js" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\bg.png" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\close.png" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\icons.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\icons.png" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\image.png" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\progress.png" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\success.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\success.png" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\upload1.png" />
+    <Content Include="modules\plug\umeditor\dialogs\image\images\upload2.png" />
+    <Content Include="modules\plug\umeditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="modules\plug\umeditor\dialogs\internal.js" />
+    <Content Include="modules\plug\umeditor\dialogs\link\link.html" />
+    <Content Include="modules\plug\umeditor\dialogs\link\link.js" />
+    <Content Include="modules\plug\umeditor\dialogs\map\map.html" />
+    <Content Include="modules\plug\umeditor\dialogs\map\map.js" />
+    <Content Include="modules\plug\umeditor\dialogs\map\show.html" />
+    <Content Include="modules\plug\umeditor\dialogs\music\music.css" />
+    <Content Include="modules\plug\umeditor\dialogs\music\music.html" />
+    <Content Include="modules\plug\umeditor\dialogs\music\music.js" />
+    <Content Include="modules\plug\umeditor\dialogs\preview\preview.html" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\size.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="modules\plug\umeditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="modules\plug\umeditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="modules\plug\umeditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="modules\plug\umeditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="modules\plug\umeditor\dialogs\spechars\spechars.html" />
+    <Content Include="modules\plug\umeditor\dialogs\spechars\spechars.js" />
+    <Content Include="modules\plug\umeditor\dialogs\table\dragicon.png" />
+    <Content Include="modules\plug\umeditor\dialogs\table\edittable.css" />
+    <Content Include="modules\plug\umeditor\dialogs\table\edittable.html" />
+    <Content Include="modules\plug\umeditor\dialogs\table\edittable.js" />
+    <Content Include="modules\plug\umeditor\dialogs\table\edittd.html" />
+    <Content Include="modules\plug\umeditor\dialogs\table\edittip.html" />
+    <Content Include="modules\plug\umeditor\dialogs\template\config.js" />
+    <Content Include="modules\plug\umeditor\dialogs\template\images\bg.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\template\images\pre0.png" />
+    <Content Include="modules\plug\umeditor\dialogs\template\images\pre1.png" />
+    <Content Include="modules\plug\umeditor\dialogs\template\images\pre2.png" />
+    <Content Include="modules\plug\umeditor\dialogs\template\images\pre3.png" />
+    <Content Include="modules\plug\umeditor\dialogs\template\images\pre4.png" />
+    <Content Include="modules\plug\umeditor\dialogs\template\template.css" />
+    <Content Include="modules\plug\umeditor\dialogs\template\template.html" />
+    <Content Include="modules\plug\umeditor\dialogs\template\template.js" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\bg.png" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\file-icons.png" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\icons.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\icons.png" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\image.png" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\progress.png" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\success.gif" />
+    <Content Include="modules\plug\umeditor\dialogs\video\images\success.png" />
+    <Content Include="modules\plug\umeditor\dialogs\video\video.css" />
+    <Content Include="modules\plug\umeditor\dialogs\video\video.html" />
+    <Content Include="modules\plug\umeditor\dialogs\video\video.js" />
+    <Content Include="modules\plug\umeditor\dialogs\webapp\webapp.html" />
+    <Content Include="modules\plug\umeditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="modules\plug\umeditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="modules\plug\umeditor\dialogs\wordimage\tangram.js" />
+    <Content Include="modules\plug\umeditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="modules\plug\umeditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="modules\plug\umeditor\index.html" />
+    <Content Include="modules\plug\umeditor\lang\en\en.js" />
+    <Content Include="modules\plug\umeditor\lang\en\images\addimage.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\background.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\button.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\copy.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\deletedisable.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\deleteenable.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\imglabel.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\listbackground.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\localimage.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\music.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="modules\plug\umeditor\lang\en\images\upload.png" />
+    <Content Include="modules\plug\umeditor\lang\zh-cn\images\copy.png" />
+    <Content Include="modules\plug\umeditor\lang\zh-cn\images\imglabel.png" />
+    <Content Include="modules\plug\umeditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="modules\plug\umeditor\lang\zh-cn\images\music.png" />
+    <Content Include="modules\plug\umeditor\lang\zh-cn\images\upload.png" />
+    <Content Include="modules\plug\umeditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="modules\plug\umeditor\net\net.sln" />
+    <Content Include="modules\plug\umeditor\net\upload\image\20160907\6360884238087677079826578.png" />
+    <Content Include="modules\plug\umeditor\themes\default\css\ueditor.css" />
+    <Content Include="modules\plug\umeditor\themes\default\css\umeditor.css" />
+    <Content Include="modules\plug\umeditor\themes\default\css\umeditor.min.css" />
+    <Content Include="modules\plug\umeditor\themes\default\dialogbase.css" />
+    <Content Include="modules\plug\umeditor\themes\default\images\anchor.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\arrow.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\arrow_down.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\arrow_up.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\button-bg.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\caret.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\charts.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\close.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\cursor_h.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\cursor_h.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\cursor_v.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\cursor_v.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\filescan.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\highlighted.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\icons-all.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\icons.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\icons.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\loaderror.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\loading.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\lock.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\ok.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\pagebreak.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\pop-bg.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\scale.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\sortable.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\spacer.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\sparator_v.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\table-cell-align.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\upload.png" />
+    <Content Include="modules\plug\umeditor\themes\default\images\videologo.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\word.gif" />
+    <Content Include="modules\plug\umeditor\themes\default\images\wordpaste.png" />
+    <Content Include="modules\plug\umeditor\themes\iframe.css" />
+    <Content Include="modules\plug\umeditor\third-party\codemirror\codemirror.css" />
+    <Content Include="modules\plug\umeditor\third-party\codemirror\codemirror.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\highcharts.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\data.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\map.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="modules\plug\umeditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="modules\plug\umeditor\third-party\jquery-1.10.2.js" />
+    <Content Include="modules\plug\umeditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\jquery.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\STIXFontLicense2010.txt" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.svg" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.svg" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.svg" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.svg" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\Symbola.svg" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\mathquill.css" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\mathquill.js" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\mathquill.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="modules\plug\umeditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\video-js.css" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\video-js.min.css" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\video-js.swf" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\video.dev.js" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\video.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.css" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="modules\plug\umeditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\xss.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="modules\plug\umeditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="modules\plug\umeditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="modules\plug\umeditor\ueditor.config.js" />
+    <Content Include="modules\plug\umeditor\ueditor.parse.js" />
+    <Content Include="modules\plug\umeditor\ueditor.parse.min.js" />
+    <Content Include="modules\plug\umeditor\umeditor.config.js" />
+    <Content Include="modules\plug\umeditor\umeditor.js" />
+    <Content Include="modules\plug\umeditor\umeditor.min.js" />
+    <Content Include="modules\plug\upload\jquery.form.js" />
+    <Content Include="modules\plug\upload\upload.js" />
+    <Content Include="modules\plug\verify.js" />
+    <Content Include="modules\scripts\global.js" />
+    <Content Include="modules\scripts\home.js" />
+    <Content Include="modules\scripts\imgbox.js" />
+    <Content Include="modules\scripts\layout.js" />
+    <Content Include="modules\scripts\lottery\chongqingssc.js" />
+    <Content Include="modules\scripts\lottery\lotteryrecord.js" />
+    <Content Include="modules\scripts\lottery\shiyiyun.js" />
+    <Content Include="modules\scripts\lottery\bettautorecord.js" />
+    <Content Include="modules\scripts\lottery\tianjinssc.js" />
+    <Content Include="modules\scripts\register\forget.js" />
+    <Content Include="modules\scripts\register\register.js" />
+    <Content Include="modules\scripts\register\partregister.js" />
+    <Content Include="modules\scripts\report\reportlist.js" />
+    <Content Include="modules\scripts\report\reportsee.js" />
+    <Content Include="modules\scripts\report\reportprofit.js" />
+    <Content Include="modules\scripts\rfriend\recommend.js" />
+    <Content Include="modules\scripts\rfriend\rfriend.js" />
+    <Content Include="modules\scripts\lottery\shanghaissl.js" />
+    <Content Include="modules\scripts\sysset\banks.js" />
+    <Content Include="modules\scripts\sysset\feedback.js" />
+    <Content Include="modules\scripts\sysset\ordersaudit.js" />
+    <Content Include="modules\scripts\sysset\roles.js" />
+    <Content Include="modules\scripts\sysset\users.js" />
+    <Content Include="modules\scripts\sysset\webusers.js" />
+    <Content Include="modules\scripts\sysset\active.js" />
+    <Content Include="modules\scripts\sysset\lottery.js" />
+    <Content Include="modules\scripts\uploadcreate.js" />
+    <Content Include="modules\scripts\userinfo\userinfo.js" />
+    <Content Include="modules\scripts\userinfo\usermsg.js" />
+    <Content Include="modules\template\faudit\imglist.html" />
+    <Content Include="modules\template\report\agentactionreport-list.html" />
+    <Content Include="modules\template\sysset\feedback-list.html" />
+    <Content Include="modules\template\sysset\orderlist.html" />
+    <Content Include="modules\template\sysset\permissions.html" />
+    <Content Include="modules\template\sysset\role-detail.html" />
+    <Content Include="modules\template\sysset\roles.html" />
+    <Content Include="modules\template\sysset\setuserrole.html" />
+    <Content Include="modules\template\sysset\user-detail.html" />
+    <Content Include="modules\template\sysset\users.html" />
+    <Content Include="modules\template\sysset\webusers.html" />
+    <Content Include="modules\template\sysset\active.html" />
+    <Content Include="modules\template\sysset\banks.html" />
+    <Content Include="modules\template\sysset\bank-detail.html" />
+    <Content Include="modules\template\sysset\order-detail.html" />
+    <Content Include="modules\template\sysset\lottery-detail.html" />
+    <Content Include="modules\template\sysset\lottery.html" />
+    <Content Include="modules\template\sysset\plays.html" />
+    <Content Include="modules\webuploader\bootstrap.min.css" />
+    <Content Include="modules\webuploader\uploader.css" />
+    <Content Include="modules\webuploader\Uploader.swf" />
+    <Content Include="modules\webuploader\webuploader.css" />
+    <Content Include="modules\webuploader\webuploader.js" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\DateForm.js" />
+    <Content Include="Scripts\diyUpload.js" />
+    <Content Include="Scripts\jquery-1.11.1.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery.keyboard.extension-scramble.min.js" />
+    <Content Include="Scripts\jquery.metadata.js" />
+    <Content Include="Scripts\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\jquery.simplemodal.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.keyboard.min.js" />
+    <Content Include="Scripts\laydate.js" />
+    <Content Include="modules\scripts\message.js" />
+    <Content Include="Scripts\PCASClass.js" />
+    <Content Include="Scripts\sea-config.js" />
+    <Content Include="Scripts\sea.js" />
+    <Content Include="Scripts\webuploader.html5only.min.js" />
+    <Content Include="modules\scripts\withdraw.js" />
+    <Content Include="Scripts\yzm.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\tempfile\" />
+    <Folder Include="Content\UploadFiles\" />
+    <Folder Include="Models\" />
+    <Folder Include="modules\plug\umeditor\net\upload\images\" />
+    <Folder Include="Upload\Active\" />
+    <Folder Include="Upload\image\" />
+    <Folder Include="Upload\UserAvatar\" />
+    <Folder Include="Views\RFriend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\css\iconfont\iconfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\css\iconfont\iconfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\css\iconfont\iconfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\UserList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\UserMsg.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Register2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Help\Forget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\img\litte-icon\img.sprite" />
+    <Content Include="modules\img\proxy.properties" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\an_hui_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\ao_men_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\bei_jing_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\china_city.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\china_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\chong_qing_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\fu_jian_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\gan_su_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\guang_dong_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\guang_xi_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\gui_zhou_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\hai_nan_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\he_bei_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\he_nan_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\hei_long_jiang_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\hu_bei_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\hu_nan_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\ji_lin_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\jiang_su_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\jiang_xi_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\liao_ning_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\nei_meng_gu_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\ning_xia_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\qing_hai_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\shan_dong_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\shan_xi_1_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\shan_xi_2_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\shang_hai_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\si_chuan_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\tai_wan_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\tian_jin_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\world_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\xi_zang_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\xiang_gang_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\xin_jiang_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\yun_nan_geo.json" />
+    <Content Include="modules\plug\echarts\util\mapData\rawData\geoJson\zhe_jiang_geo.json" />
+    <Content Include="modules\plug\umeditor\net\config.json" />
+    <Content Include="modules\plug\umeditor\net\controller.ashx" />
+    <Content Include="modules\plug\umeditor\net\getContent.ashx" />
+    <Content Include="modules\plug\umeditor\net\imageUp.ashx" />
+    <Content Include="modules\plug\umeditor\net\README.md" />
+    <Content Include="modules\plug\umeditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.eot" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.ttf" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.woff" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.eot" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.ttf" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.woff" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.eot" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.ttf" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.woff" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.eot" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.ttf" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.woff" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\Symbola.eot" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\Symbola.otf" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\Symbola.ttf" />
+    <Content Include="modules\plug\umeditor\third-party\mathquill\font\Symbola.woff" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="modules\plug\umeditor\third-party\video-js\font\vjs.woff" />
+    <None Include="Properties\PublishProfiles\发布.pubxml" />
+    <Content Include="Views\Help\Security.cshtml" />
+    <Content Include="Views\User\UserAdd.cshtml" />
+    <Content Include="Views\User\UserEdit.cshtml" />
+    <Content Include="Views\SysSet\Users.cshtml" />
+    <Content Include="Views\SysSet\Role.cshtml" />
+    <Content Include="Views\SysSet\Active.cshtml" />
+    <Content Include="Views\SysSet\Orders.cshtml" />
+    <Content Include="Views\SysSet\FeedBack.cshtml" />
+    <Content Include="Views\SysSet\RolePermission.cshtml" />
+    <Content Include="Views\Help\Active.cshtml" />
+    <Content Include="Views\SysSet\ActiveAdd.cshtml" />
+    <Content Include="Views\SysSet\ActiveDetail.cshtml" />
+    <Content Include="Views\Account\AccountSafe.cshtml" />
+    <Content Include="Views\Account\MyCard.cshtml" />
+    <Content Include="Views\Account\Banks.cshtml" />
+    <Content Include="Views\Help\FuncInfo.cshtml" />
+    <Content Include="Views\Help\PlayInfo.cshtml" />
+    <Content Include="Views\Help\General.cshtml" />
+    <Content Include="Views\User\UserReward.cshtml" />
+    <Content Include="Views\SysSet\FeedDetail.cshtml" />
+    <Content Include="Views\SysSet\Lottery.cshtml" />
+    <Content Include="Views\SysSet\LotteryPlays.cshtml" />
+    <Content Include="Views\Lottery\Index.cshtml" />
+    <Content Include="Views\Lottery\LotteryRecord.cshtml" />
+    <Content Include="Views\Lottery\BettAutoRecord.cshtml" />
+    <Content Include="Views\Lottery\HighLottery.cshtml" />
+    <Content Include="Views\Lottery\SSC3D.cshtml" />
+    <Content Include="Views\Report\ReportList.cshtml" />
+    <Content Include="Views\Report\ReportSee.cshtml" />
+    <Content Include="Views\Report\ReportToday.cshtml" />
+    <Content Include="Views\Report\ReportProfit.cshtml" />
+    <Content Include="Views\User\UserSpread.cshtml" />
+    <Content Include="Views\Lottery\CQLottery.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProBusiness\ProBusiness.csproj">
+      <Project>{4ba7be5b-94b2-4f79-b333-c5fe5429424a}</Project>
+      <Name>ProBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProDAL\ProDAL.csproj">
+      <Project>{6559e42c-832c-4ab3-8e7d-52d03af86b5b}</Project>
+      <Name>ProDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProEntity\ProEntity.csproj">
+      <Project>{4c47b989-57a6-4602-b33b-0957c32a0930}</Project>
+      <Name>ProEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProEnum\ProEnum.csproj">
+      <Project>{b2f2671d-7f9b-4e3e-b5e1-fe8acbf1976f}</Project>
+      <Name>ProEnum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProTools\ProTools.csproj">
+      <Project>{898a9502-a35e-4032-a90c-42708b2b9c82}</Project>
+      <Name>ProTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19626</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6323/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

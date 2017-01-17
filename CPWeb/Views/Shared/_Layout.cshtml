@@ -1,0 +1,270 @@
+﻿@using ProEntity
+<!DOCTYPE html>
+   @{
+        ProEntity.Manage.M_Users CurrentUser = (ProEntity.Manage.M_Users)Session["Manager"];
+        string controller =  Url.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+        string action = Url.RequestContext.RouteData.Values["action"].ToString().ToLower();
+        Menu controllerMenu = ExpandClass.GetController(HttpContext.Current, controller);
+    }
+<html>
+<head> 
+    <title>@ViewBag.Title</title> 
+    <link rel="stylesheet" type="text/css" href="/modules/css/head.css">  
+    @RenderSection("css", false)
+</head>
+
+<body id="mainbody">
+   
+    <script type="text/javascript" src="/Scripts/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript"src="/Scripts/DateForm.js"></script> 
+
+<!-- 头部导航栏 -->
+<header>
+    <div class="header">
+        <div class="logo" style="cursor: pointer;">
+            <a href="">
+                <img src="/modules/img/litte-icon/logo.png" alt="logo" title="logo" width="153" height="36"/></a>
+        </div>
+        <div class="nav-box">
+            <ul id="sddm"> 
+            <li class="@(controller == "home" ? "button2 on2" : "lebutton2ft")"><a href="javascript:void(0);"  data-href="/Help/Security">首页</a></li>
+            <li class="@(controller == "active" ? "button2 on2" : "lebutton2ft")"><a href="javascript:void(0);" data-href="/Help/Active">活动</a></li>
+            @foreach (Menu model in ExpandClass.GetChildMenuByCode(HttpContext.Current, ExpandClass.CLIENT_TOP_CODE))
+            {                   
+                <li class="@(model.MenuCode.ToUpper() == (controllerMenu != null ? controllerMenu.PCode.ToUpper() : "101000000") ? "button2 on2" : "button2")"  data-code="@(model.MenuCode)">            
+                    <a  href="javascript:void(0);"  data-href="/@(model.Controller)/@(model.View)">
+                        @(model.Name)
+                    </a>
+                    <div class="navdiv"> 
+                       @foreach (Menu items in ExpandClass.GetChildMenuByCode(HttpContext.Current, model.MenuCode))
+                       { 
+                           <a data-href="/@(items.Controller)/@(items.View)" href="javascript:void(0);">@(items.Name)</a>
+                       }
+                    </div>
+                </li> 
+            } 
+            </ul>
+        </div>
+    </div>
+</header>
+  <div class="main-content">
+        <!-- 左边导航栏 -->
+        <div class="left-header">
+            <!-- 信息栏 -->
+            <div class="left-info">
+                <ul>
+                    <div style="width: 60px; height: 70px; margin-left: 60px;">
+                        <img src="/modules/img/head.jpg" alt="用户头像" title="" class="picture" />
+                    </div>
+                    <li><span>
+                        <img src="/modules/img/litte-icon/1.png" width="16" height="16" style="vertical-align: middle;" /></span><span>余额：</span><span id="uaccount">0.00</span></li>
+                    <li><span>
+                        <img src="/modules/img/litte-icon/jfen.png" width="16" height="16" style="vertical-align: middle;" /></span><span>积分：</span><span id="uintegal">0.00</span></li>
+                    <li><span>
+                        <img src="/modules/img/litte-icon/coupon.png" width="16" height="16" style="vertical-align: middle;" /></span><span>优惠券：</span><span style="left: 78px;" id="udiscount">0.00</span></li>
+                @*    <div class="left-info-with">
+                        <div class="recharge">
+                            <a target="mainframe" href="recharge.html">充值</a>
+                        </div>
+                    </div>
+                    <div class="left-info-with">
+                        <div class="withdraw">
+                            <a target="mainframe" href="withdraw_cash.html">提现</a>
+                        </div>
+                    </div>*@
+                    <div class="left-info-with">
+                        <div class="withdraw">
+                            <a id="loginout" href="javascript:void(0)">退出</a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <!-- 左导航 -->
+            <div class="left-href">
+                <section id="conter">
+                    <section style="float: left; margin: 0 auto; width: 100%;">
+                    <details class="menu" open>
+                        <summary>
+                            <img src="/modules/img/litte-icon/游戏.png" width="20" height="20" style="vertical-align: middle; padding-right: 10px;"/>开始游戏</summary>
+                        <dl class="qh1">
+                             @foreach (Lottery model in ExpandClass.GetLottery(HttpContext.Current))
+                             {
+                                 if (model.Status == 1)
+                                 {
+                                     <a data-href="/Lottery/Index/@(model.CPCode)" href="javascript:void(0);">
+                                         <dd>@(model.CPName)</dd>
+                                     </a>
+                                 }
+                             }
+                        </dl>
+                    </details>
+                    <details class="menu" open>
+                        <summary>
+                            <img src="/modules/img/litte-icon/record.png" width="20" height="20" style="vertical-align: middle; padding-right: 10px;"/>游戏记录</summary>
+                        <dl class="qh2">
+                            <a  data-href="/Lottery/LotteryRecord"  href="javascript:void(0);" >
+                                <dd>投注记录</dd>
+                            </a>
+                            <a data-href="/Lottery/BettAutoRecord"  href="javascript:void(0);">
+                                <dd>追号记录</dd>
+                            </a>
+                        </dl>
+                    </details>
+                </section>
+                </section>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-header">
+                <div class="winning">中奖公告</div>
+                <div class="msg">
+                    <ul id="sItem">
+                    @*    <li>
+                            <div>恭喜 <span class="blod name">【萤火虫】</span>重庆时时彩 1616561651008 期, 喜中 <span class="amount">3,600.00 </span>大奖</div>
+                        </li>
+                        <li>
+                            <div>恭喜 <span class="blod name">【灰灰鸟】</span>重庆时时彩 1616561651006 期, 喜中 <span class="amount">4,600.00 </span>大奖</div>
+                        </li>
+                        <li>
+                            <div>恭喜 <span class="blod name">【蝈蝈】</span>重庆时时彩 1616561651009 期, 喜中 <span class="amount">5,600.00 </span>大奖</div>
+                        </li>
+                        <li>
+                            <div>恭喜 <span class="blod name">【蝈蝈2】</span>重庆时时彩 1616561651009 期, 喜中 <span class="amount">5,600.00 </span>大奖</div>
+                        </li>
+                        <li>
+                            <div>恭喜 <span class="blod name">【蝈蝈3】</span>重庆时时彩 1616561651009 期, 喜中 <span class="amount">5,600.00 </span>大奖</div>
+                        </li>*@
+                    </ul>
+                </div>
+            </div>
+            <div class="right-main">
+              
+                <div class="main-body">
+                    @*<div class="main-content">*@
+                        @RenderBody()
+                    @*</div>*@
+                </div>
+                  <iframe src="/Help/Security" frameborder="0" class="frame" name="mainframe" id="mainframe" width="100%" height="100%" scrolling="auto">#document
+                     
+                </iframe>
+
+            </div>
+        </div>
+    </div>
+
+
+<div id="feedback-dialog" class="feedback-dialog" style="display: none;">
+    <!-- 普通弹出层 [[ -->
+    <div class="box-title">
+        <h3 class="tLeft red">举报反馈</h3>
+    </div>
+    <div class="box-main">
+        <div class="tips">
+            <span class="tips-ico"><span class="ico-info"></span></span>      
+            <div class="tips-content">
+                <div class="tips-title">
+                    <p>标　　题：<input id="feedtitel" type="text" style="line-height: 20px;"/></p>
+                    <p>类　　型：<select id="feedtype" style="line-height: 20px; height: 20px; width: 80px;"><option value="1">举报</option><option value="1">反馈</option></select></p>
+                    <p>被举报人：<input type="text" id="tipedid" class="hide" value=""  hidden="hidden" /><input type="text"id="tipedname" readonly="readonly"  style="line-height: 20px;"/>
+                    </p>
+                    <p>描　　述：<textarea id="feedcontent" style="width: 200px; height: 100px;resize: none;"></textarea></p>  
+                </div>
+                <div class="feedtips red" style="padding-left: 30px; font-size:14px;"></div>
+            </div>
+        </div>
+        <div class="box-buttons">
+            <button type="button" class="feed-cancle" >关 闭</button>
+            <button type="button" class="feed-ok" style="background: #f22b64; color: #fff0f5;">提 交</button>
+        </div>
+    </div>
+    <!-- 普通弹出层 ]] -->
+</div>
+<input type="hidden" value="@controller" id="pagecontroller"/>
+<input type="hidden" value="@action" id="pageaction"/>  
+<script type="text/javascript">
+    $(function() {
+        $('#sddm a').each(function(i, v) {
+            $(v).click(function() {
+                $('#mainframe').attr("src", $(v).data("href"));
+            });
+        });
+        $('.menu a').each(function(i, v) {
+            $(v).click(function() {
+                $('#mainframe').attr("src", $(v).data("href"));
+            });
+        });
+        $('#sddm li').each(function(i, v) {
+            $(v).click(function() {
+                if (!$(v).hasClass('on2')) {
+                    $(v).siblings().removeClass('on2');
+                    $(v).addClass('on2');
+                }
+            });
+        });
+        $('#sddm li a:first-child').each(function(i, v) {
+            $(v).mouseover(function() {
+                $(v).next().show();
+
+            }).mouseout(function() {
+                $(v).next().hide();
+            });
+        });
+        $('.navdiv').each(function(i, v) {
+            $(v).mouseover(function() {
+                $('.navdiv').hide();
+                $(v).show();
+            }).mouseout(function() {
+                $(v).hide();
+            });
+        });
+        $('#loginout').click(function () { $.post('/Home/Logout', null, function () { window.location.href = '/Home/Login'; }); });
+        getAccount();
+        getLotteryResult();
+        setInterval("getAccount()", 7000);
+        setInterval("getLotteryResult()", 300000);
+    });
+    $(document).ready(function() {
+       
+
+    });
+
+    function getAccount() {
+        $.post('/User/GetUserAccount', {}, function (data) {
+            $('#uaccount').html(data.item.AccountFee);
+            $('#uintegal').html(data.item.InteFee);
+            $('#udiscount').html(data.item.DiscountFee);
+        });
+    }
+    function getLotteryResult() {
+        $.post('/Lottery/GetLotteryWin', {}, function (data) {
+            var html = '';
+            for (var i = 0; i < data.items.length; i++) {
+                var item = data.items[i];
+                html += '<li><div>恭喜 <span class="blod name">【'+item.UserName+'】</span>'+item.CPName+' '+item.IssueNum+' 期, 喜中 <span class="amount">'+item.WinFee+' </span>大奖</div></li> ';
+            }
+            $('#sItem').html(html);
+            $("#sItem li:not(:first)").css("display", "none");
+            var B = $("#sItem li:last");
+            var C = $("#sItem li:first");
+            setInterval(function () {
+                if (B.is(":visible")) {
+                    C.fadeIn(500).addClass("in");
+                    B.hide();
+                } else {
+                    $("#sItem li:visible").addClass("in");
+                    $("#sItem li.in").next().fadeIn(500);
+                    $("li.in").hide().removeClass("in");
+                }
+            }, 4000);
+            $(".left-header .left-href a").on("click", function (evt) {
+                $(".left-header .left-href .up").removeClass("up");
+                $(this).addClass("up");
+            });
+        });
+    }
+</script>
+
+@RenderSection("scripts", false)
+</body>
+    
+</html>

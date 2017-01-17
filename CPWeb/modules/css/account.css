@@ -1,0 +1,210 @@
+﻿.c-yellow {
+	color: #ff7e00
+}
+.mdl h1, .mdl h2, .mdl h3 {
+	line-height: 1 !important;
+}
+body, html {
+	font-family: '微软雅黑', arial !important;
+	font-size: 12px !important;
+	background: 0 0;
+	background-color: #e1eaf0 !important;
+	color: #666 !important;
+	padding: 0;
+	margin: 0
+}
+body a {
+	text-decoration: none
+}
+.con {
+	padding: 15px;
+	background-color: #fff;
+	margin: 0px 30px 0
+}
+.chooseRecords>.filter *, .chooseRecords>.filter-actions *, .chooseRecords>.content * {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: 1
+}
+.chooseRecords .header .current-location {
+	padding: 0 30px;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #d0dae4
+}
+.chooseRecords .filter {
+	position: relative;
+	margin: 0px 30px 0;
+	padding: 15px 15px 5px;
+	background-color: #fff
+}
+.chooseRecords .filter label {
+	display: inline-block;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.chooseRecords .filter label .text-middle-input {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px
+}
+.chooseRecords .filter label .input {
+	width: 108px;
+	height: 30px;
+	padding: 0 5px;
+	line-height: 30px;
+	vertical-align: middle;
+	color: #333;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	margin-bottom: 0;
+	outline: 0
+}
+.chooseRecords .filter label .input:hover {
+	border-color: #7fc7f4
+}
+.chooseRecords .filter label .input:active {
+	border-color: #1a9ff3
+}
+.chooseRecords .filter label .input.end-time, .chooseRecords .filter label .input.start-time {
+	width: 135px
+}
+.chooseRecords .filter label .input.gamesections, .chooseRecords .filter label .input.state {
+	width: 78px
+}
+.chooseRecords .filter .filter-button-box {
+	height: 30px;
+	padding-left: 73px;
+	margin-bottom: 10px;
+	color: #fff
+}
+.chooseRecords .filter .filter-button-box .clear, .chooseRecords .filter .filter-button-box .search {
+	padding: 0 30px;
+	margin-right: 17px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 2px;
+	cursor: pointer;
+	margin-left: -8px
+}
+.chooseRecords .filter .filter-button-box .search {
+	background-color: #1a9ff3
+}
+.chooseRecords .filter .filter-button-box .search:hover {
+	background-color: #31abf7
+}
+.chooseRecords .filter .filter-button-box .search:active {
+	background-color: #0a8ee2
+}
+.chooseRecords .filter .filter-button-box .clear {
+	background-color: #9db2bf
+}
+.chooseRecords .filter .filter-button-box .clear:hover {
+	background-color: #aabbc6
+}
+.chooseRecords .filter .filter-button-box .clear:active {
+	background-color: #8ba3b2
+}
+.chooseRecords .filter-actions {
+	position: relative;
+	height: 16px;
+	width: 100%;
+	text-align: center
+}
+.chooseRecords .filter-actions .filter-collapse-box {
+	display: inline-block;
+	width: 37px;
+	height: 14px;
+	background-color: #aed8f2;
+	background-repeat: no-repeat;
+	text-align: center;
+	border-radius: 0 0 2px 2px;
+	cursor: pointer
+}
+.chooseRecords .filter-actions .filter-collapse-box:hover {
+	background-color: #AC1716
+}
+.chooseRecords .filter-actions .filter-collapse-box:active {
+	background-color: #AC1716
+}
+.chooseRecords .filter-actions .filter-collapse-box.down .filter-collapse {
+	background-image: url(../img/chooseRecords.png);
+	background-position: -21px -32px
+}
+.chooseRecords .filter-actions .filter-collapse-box .filter-collapse {
+	width: 7px;
+	height: 7px;
+	display: inline-block;
+	background-image: url(../img/chooseRecords.png);
+	background-position: -28px -32px;
+	margin-top: 4px;
+}
+.chooseRecords .content {
+	padding: 15px;
+	background-color: #fff;
+	margin: 10px 30px 0
+}
+.chooseRecords .content .data {
+	overflow-x: auto;
+	overflow-y: hidden
+}
+.chooseRecords .content .data table {
+	width: 100%;
+	height: auto;
+	table-layout: fixed;
+	border-collapse: collapse
+}
+.chooseRecords .content .data table thead {
+	color: #333;
+	background-color: #e1eaf0
+}
+.chooseRecords .content .data table td, .chooseRecords .content .data table th {
+	word-spacing: normal;
+	word-break: break-all;
+	text-align: center;
+	height: 16px;
+	padding: 10px 0px 10px 0px;
+	line-height: 1.5;
+/*	border:1px solid red;*/
+}
+.chooseRecords .content .data table tbody tr {
+	border-bottom: 1px solid #f1f1f1
+}
+.chooseRecords .content .data table tbody tr:hover {
+	background-color: #f9f9f9
+}
+.chooseRecords .content .data table tbody tr.on {
+	background-color: #fffae7
+}
+.chooseRecords .content .data table tfoot td {
+	text-align: center;
+	padding: 10px 0;
+	height: 30px
+}
+
+.alert {background-color: #333;opacity:0.8; font-size: 13px; position: fixed; top:35%; z-index: 99999; 
+         padding:20px;padding-left:40px;  overflow:auto; border-radius:5px;min-width:140px;max-width:260px;}
+.alert .alert-wrap { word-wrap: break-word;  word-break:break-all;color:#fff;font-size:14px;}
+.alert-wrap .alert-icon-right:before {content:"\e613";}
+.alert-wrap .alert-icon-right {color:#fefefe;font-size:20px;float:left;}
+.alert-wrap .alert-icon-warn:before {content:"\e64a";}
+.alert-wrap .alert-icon-warn {color:#fefefe;font-size:20px;float:left;}
+.alert-wrap .alert-msg {float:left;color:#fff;font-size:16px;line-height:24px; padding:0 20px 0 15px;max-width:160px;}
+.alert-wrap .alert-close:before {content:"\e628";}
+.alert-wrap .alert-close {float:left;color:#ddd;font-size:20px;padding-top:0px;cursor:pointer;}
+.alert-wrap .alert-close:hover {color:#fff;}
+/*confirm样式*/
+.confirm-layer {position: fixed; z-index:99998; top:0; left:0;right:0; bottom:0; background-color:#000; opacity:0.7;}
+.confirm { border: 1px solid #ccc; background-color: #fff; font-size: 13px; position: fixed; top:35%; z-index: 99999; width:260px; overflow:auto;padding:20px;border-radius:3px; }
+.confirm .confirm-wrap { word-wrap: break-word;  word-break:break-all;font-size:16px;  }
+.confirm .confirm-bottom { margin-top:20px; text-align:right; }
+.confirm-bottom .sure { padding:10px 24px; background-color:#D64242; color:#fff; border:none; cursor:pointer; display:inline-block; border-radius:3px; }
+.confirm-bottom .sure:hover {  background-color:#AC1716;  }
+.confirm-bottom .close { padding:5px 40px; color:#999; border:none; cursor:pointer; display:inline-block; }
+.confirm-bottom .close:hover {color:#AC1716; }
