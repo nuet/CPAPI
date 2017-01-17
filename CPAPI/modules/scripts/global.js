@@ -10,7 +10,7 @@
             async: !anync,
             cache: false,
             success: function (data) { 
-                if (typeof (data.ErrMsg) != "undefined") {
+                if (typeof (data.ErrMsg) != "undefined" && data.ErrMsg!="") {
                     alert(data.ErrMsg);
                 } else {
                     if (data.error) {

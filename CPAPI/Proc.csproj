@@ -239,6 +239,7 @@
     <Content Include="modules\images\img-noimg.png" />
     <Content Include="modules\images\loginBackground.png" />
     <Content Include="modules\images\loginMainBackground.jpg" />
+    <Content Include="modules\images\logo-withe.ico" />
     <Content Include="modules\images\logo.ico" />
     <Content Include="modules\images\logo.jpg" />
     <Content Include="modules\images\open.png" />
@@ -451,6 +452,8 @@
     <Content Include="modules\plug\laydate\skins\molv\laydate.css" />
     <Content Include="modules\plug\seach_keys\seach_keys.js" />
     <Content Include="modules\plug\seach_keys\style.css" />
+    <Content Include="modules\plug\switch\style.css" />
+    <Content Include="modules\plug\switch\switch.js" />
     <Content Include="modules\plug\umeditor\dialogs\anchor\anchor.html" />
     <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.css" />
     <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.html" />
@@ -761,6 +764,7 @@
     <Content Include="modules\scripts\report\clientsloginreport.js" />
     <Content Include="modules\scripts\report\clientsvitalityreport.js" />
     <Content Include="modules\scripts\sysset\feedback.js" />
+    <Content Include="modules\scripts\sysset\lottery.js" />
     <Content Include="modules\scripts\sysset\roles.js" />
     <Content Include="modules\scripts\sysset\users.js" />
     <Content Include="modules\scripts\sysset\webusers.js" />
@@ -773,6 +777,8 @@
     <Content Include="modules\template\faudit\orderlist.html" />
     <Content Include="modules\template\report\agentactionreport-list.html" />
     <Content Include="modules\template\sysset\feedback-list.html" />
+    <Content Include="modules\template\sysset\lottery-detail.html" />
+    <Content Include="modules\template\sysset\lottery.html" />
     <Content Include="modules\template\sysset\permissions.html" />
     <Content Include="modules\template\sysset\role-detail.html" />
     <Content Include="modules\template\sysset\roles.html" />
@@ -947,6 +953,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\发布.pubxml" />
+    <Content Include="Views\SysSet\Lottery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

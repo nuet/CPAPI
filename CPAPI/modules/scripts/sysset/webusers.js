@@ -22,9 +22,8 @@
 
         require.async("dropdown", function () {
             var UserStatus = [
-               { name: "正常", value: "1" },
-               { name: "禁闭", value: "3" },
-               { name: "注册未完成", value: "0" }
+               { name: "正常", value: "0" },
+               { name: "禁闭", value: "3" }
             ];
             $("#userStatus").dropdown({
                 prevText: "状态-",
@@ -72,7 +71,7 @@
         $("#updateObject").click(function () {
             var id = $(this).data("id");
             confirm("用户解禁后允许登录,确认解除禁闭吗？", function () {
-                Global.post("/SysSet/UpdateUserStatus", { id: id, status:1 }, function (data) {
+                Global.post("/SysSet/UpdateUserStatus", { id: id, status:0 }, function (data) {
                     if (data != null && data.status == 1) {
                         _self.getList();
                     } else {

@@ -176,8 +176,8 @@ namespace CPiao.Controllers
 
         public JsonResult GetUserAccount()
         {
-            var model = M_UsersBusiness.GetUserAccount(CurrentUser.UserID);
-            JsonDictionary.Add("item", model);
+            //var model = M_UsersBusiness.GetUserAccount(CurrentUser.UserID);
+            //JsonDictionary.Add("item", model);
             return new JsonResult
             {
                 Data = JsonDictionary,

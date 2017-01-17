@@ -106,30 +106,13 @@ namespace ProBusiness
             DataTable dt = new M_UsersDAL().GetM_UserByLoginName(loginname);
             return dt.Rows.Count;
         }
-        public static List<M_Users> GetUsers(int pageSize, int pageIndex, ref int totalCount, ref int pageCount, int type = -1, int status = -1, string keyWords = "", string colmonasc = "", bool isasc = false,
-            string rebatemin="",string rebatemax="",string accountmin="",string accountmax="")
+        public static List<M_Users> GetUsers(int pageSize, int pageIndex, ref int totalCount, ref int pageCount, int type = -1, int status = -1, string keyWords = "", string colmonasc = "", bool isasc = false)
         {
-            string whereSql = " a.Status<>9";
-            if (!string.IsNullOrEmpty(rebatemax))
-            {
-                whereSql += " and a.Rebate<='" + rebatemax + "' ";
-            }
-            if (!string.IsNullOrEmpty(rebatemin))
-            {
-                whereSql += " and a.Rebate>'" + rebatemin + "' ";
-            }
+            string whereSql = " a.Status<>9"; 
             if (type > -1)
             {
                 whereSql += " and a.type=" + type +" ";
-            }
-            if (!string.IsNullOrEmpty(accountmax))
-            {
-                whereSql += " and b.AccountFee<='" + accountmax + "' ";
-            }
-            if (!string.IsNullOrEmpty(accountmin))
-            {
-                whereSql += " and b.AccountFee>'" + accountmin + "' ";
-            }
+            } 
             if (status > -1)
             {
                 whereSql += " and a.Status=" + status;
@@ -138,8 +121,8 @@ namespace ProBusiness
             {
                 whereSql += " and (a.UserName like '%" + keyWords + "%' or a.LoginName like'%" + keyWords + "%') ";
             } 
-            string cstr = @" a.*,b.AccountFee ";
-            DataTable dt = CommonBusiness.GetPagerData("M_Users a join UserAccount b on a.UserID=b.UserID ", cstr, whereSql, "a.AutoID", colmonasc, pageSize, pageIndex, out totalCount, out pageCount, isasc);
+            string cstr = @" a.* ";
+            DataTable dt = CommonBusiness.GetPagerData("M_Users a  ", cstr, whereSql, "a.AutoID", colmonasc, pageSize, pageIndex, out totalCount, out pageCount, isasc);
             List<M_Users> list = new List<M_Users>();
             M_Users model;
             foreach (DataRow item in dt.Rows)
@@ -186,27 +169,11 @@ namespace ProBusiness
         public static List<M_Users> GetUsersRelationList(int pageSize, int pageIndex, ref int totalCount, ref int pageCount, string userid,int type = -1, int status = -1, string keyWords = "", string colmonasc = "a.AutoID", bool isasc = false,
             string rebatemin="",string rebatemax="",string accountmin="",string accountmax="",bool myselft = false)
         {
-            string whereSql = " where a.layers>0 and a.Status<>9  ";
-            if (!string.IsNullOrEmpty(rebatemax))
-            {
-                whereSql += " and a.Rebate<='" + rebatemax + "' ";
-            }
-            if (!string.IsNullOrEmpty(rebatemin))
-            {
-                whereSql += " and a.Rebate>'" + rebatemin + "' ";
-            }
+            string whereSql = " where a.layers>0 and a.Status<>9  "; 
             if (type > -1)
             {
                 whereSql += " and a.type=" + type + " ";
-            }
-            if (!string.IsNullOrEmpty(accountmax))
-            {
-                whereSql += " and b.AccountFee<='" + accountmax + "' ";
-            }
-            if (!string.IsNullOrEmpty(accountmin))
-            {
-                whereSql += " and b.AccountFee>'" + accountmin + "' ";
-            }
+            } 
             if (status > -1)
             {
                 whereSql += " and a.Status=" + status;
@@ -221,7 +188,7 @@ namespace ProBusiness
                 orswhere = " and ( c.ParentID='" + userid + "' " + (myselft ? " or a.userid='" + userid + "'" : "")+" ) "; ;
             }
              
-            string clumstr = " select  a.*,b.AccountFee  from M_Users a join UserAccount b on a.UserID=b.Userid join UserRelation c on a.UserID=c.UserID  " + orswhere + " "+whereSql;
+            string clumstr = " select  a.*  from M_Users a  join UserRelation c on a.UserID=c.UserID  " + orswhere + " "+whereSql;
             DataTable dt = M_UsersDAL.GetDataTable(clumstr);
             List<M_Users> list = new List<M_Users>();
             M_Users model;
@@ -237,7 +204,7 @@ namespace ProBusiness
         public static List<M_Users> GetUsersRelationList(string userid,bool myselft=false)
         {
             string whereSql = myselft ? " or a.userid='" + userid + "'" : "";
-            string clumstr = " select  a.*,b.AccountFee  from M_Users a join UserAccount b on a.UserID=b.Userid join UserRelation c on a.UserID=c.UserID and ( c.ParentID='" + userid + "' "+whereSql +"  ) where a.layers>0 and a.Status<>9";
+            string clumstr = " select  a.*  from M_Users a join UserRelation c on a.UserID=c.UserID and ( c.ParentID='" + userid + "' "+whereSql +"  ) where a.layers>0 and a.Status<>9";
             DataTable dt = M_UsersDAL.GetDataTable(clumstr);
             List<M_Users> list = new List<M_Users>();
             M_Users model;
@@ -278,19 +245,7 @@ namespace ProBusiness
 
             return model;
         }
-
-        public static UserAccount GetUserAccount(string id)
-        {
-            string clumstr = " select a.*  from UserAccount a where  a.UserID='" + id + "'";
-            DataTable dt = M_UsersDAL.GetDataTable(clumstr);
-            UserAccount model = new UserAccount();
-            foreach (DataRow item in dt.Rows)
-            {
-                model.FillData(item);
-            }
-            return model;
-        }
-
+          
         #endregion
 
         #region 改

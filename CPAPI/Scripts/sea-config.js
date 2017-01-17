@@ -17,6 +17,7 @@ seajs.config({
         'zrender': 'plug/echarts/zrender/zrender.js',
         //日期控件
         'moment': 'plug/daterangepicker/moment.js',
+        'switch': 'plug/switch/switch.js',
         'daterangepicker': 'plug/daterangepicker/daterangepicker.js'
     }
 });

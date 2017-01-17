@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using ProBusiness;
 using ProBusiness.Manage;
+using ProEntity;
 using ProEntity.Manage;
 
 namespace Proc.Controllers
@@ -46,7 +47,10 @@ namespace Proc.Controllers
             ViewBag.id = id;
             return View();
         }
-
+        public ActionResult Lottery()
+        {
+            return View();
+        }
         #region Ajax
 
         /// <summary>
@@ -294,6 +298,67 @@ namespace Proc.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
+
+        #region Lotterys
+
+        public JsonResult GetLotterys()
+        {
+            JsonDictionary.Add("items", CommonBusiness.LottertList);
+            return new JsonResult()
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        public JsonResult GetLotteryByID(int autoid)
+        {
+            var model = WebSetBusiness.GetLotteryDetailByID(autoid);
+            JsonDictionary.Add("model", model);
+            return new JsonResult()
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+        public JsonResult SaveLottery(string entity)
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            Lottery model = serializer.Deserialize<Lottery>(entity);
+            string errmsg = "";
+            if (model.AutoID < 1)
+            {
+                model.AutoID = WebSetBusiness.CreateLottery(model.CPName, model.CPCode, model.IconType, model.ResultUrl, CurrentUser.UserID, model.OpenTimes, model.CloseTime, model.OnSaleTime, model.SealTimes, model.PeriodsNum, ref errmsg);
+            }
+            else
+            {
+                bool bl = WebSetBusiness.UpdateLottery(model.CPName, model.CPCode, model.IconType, model.ResultUrl, model.OpenTimes, model.CloseTime, model.OnSaleTime, model.SealTimes, model.PeriodsNum, model.AutoID);
+                if (!bl)
+                {
+                    model.AutoID = 0;
+                }
+            }
+            JsonDictionary.Add("model", model);
+            JsonDictionary.Add("ErrMsg", errmsg);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+        public JsonResult DeleteLottery(int autoid, int status)
+        {
+            bool bl = WebSetBusiness.UpdateUserLottery(status, autoid);
+            JsonDictionary.Add("status", bl);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+
+        #endregion
         #endregion
     }
 }

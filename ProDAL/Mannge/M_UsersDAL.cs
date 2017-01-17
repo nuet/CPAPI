@@ -180,7 +180,7 @@ namespace ProDAL.Manage
                                     new SqlParameter("@Status",status),
                                    };
 
-            return ExecuteNonQuery("update M_Users set Status=@Status where userID=@userID and Status not in (0,9)", paras, CommandType.Text) > 0;
+            return ExecuteNonQuery("update M_Users set Status=@Status where userID=@userID and Status not in (9)", paras, CommandType.Text) > 0;
         }
         public bool UpdateM_UserRebate(string userid,string parentid, decimal point,SqlTransaction tran)
         {
